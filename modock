@@ -1,14 +1,16 @@
 #!/bin/bash
 
-# Assign the argument to a variable named current
-current="$1"
+# Assign the current preference to a variable.
+current=`defaults read com.apple.dock orientation`
 
 # Check which option was chosen and print out a response accordingly
 if [[ "$current" == "left" ]]; then
-  echo "You chose left"
+  defaults write com.apple.dock orientation right  
 elif [[ "$current" == "right" ]]; then
-  echo "You chose right"
+  defaults write com.apple.dock orientation left
 else
   echo "Invalid argument: $current. Please choose 'left' or 'right'."
 fi
 
+killall Dock
+echo "Wait a second."
