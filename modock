@@ -1,10 +1,14 @@
 #!/bin/bash
 
-if [[ "$1" == "left" ]]; then
+# Assign the argument to a variable named current
+current="$1"
+
+# Check which option was chosen and print out a response accordingly
+if [[ "$current" == "left" ]]; then
   echo "You chose left"
-elif [[ "$1" == "right" ]]; then
+elif [[ "$current" == "right" ]]; then
   echo "You chose right"
 else
-  echo "Invalid argument: $1. Please choose 'left' or 'right'."
+  echo "Invalid argument: $current. Please choose 'left' or 'right'."
 fi
 
