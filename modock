@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ "$1" == "left" ]]; then
+  echo "You chose left"
+elif [[ "$1" == "right" ]]; then
+  echo "You chose right"
+else
+  echo "Invalid argument: $1. Please choose 'left' or 'right'."
+fi
+
